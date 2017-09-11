@@ -1,0 +1,1948 @@
+<?xml version="1.0" ?>
+<template encoding-version="1.0">
+  <description></description>
+  <groupId>10a711bf-11d6-116b-3cfc-3926a7064839</groupId>
+  <name>two_way_nififlow</name>
+  <snippet>
+    <controllerServices>
+      <id>10a711cc-11d6-116b-0000-000000000000</id>
+      <parentGroupId>10a711bf-11d6-116b-0000-000000000000</parentGroupId>
+      <comments></comments>
+      <descriptors>
+        <entry>
+          <key>Database Connection URL</key>
+          <value>
+            <name>Database Connection URL</name>
+          </value>
+        </entry>
+        <entry>
+          <key>Database Driver Class Name</key>
+          <value>
+            <name>Database Driver Class Name</name>
+          </value>
+        </entry>
+        <entry>
+          <key>database-driver-locations</key>
+          <value>
+            <name>database-driver-locations</name>
+          </value>
+        </entry>
+        <entry>
+          <key>Database User</key>
+          <value>
+            <name>Database User</name>
+          </value>
+        </entry>
+        <entry>
+          <key>Password</key>
+          <value>
+            <name>Password</name>
+          </value>
+        </entry>
+        <entry>
+          <key>Max Wait Time</key>
+          <value>
+            <name>Max Wait Time</name>
+          </value>
+        </entry>
+        <entry>
+          <key>Max Total Connections</key>
+          <value>
+            <name>Max Total Connections</name>
+          </value>
+        </entry>
+        <entry>
+          <key>Validation-query</key>
+          <value>
+            <name>Validation-query</name>
+          </value>
+        </entry>
+      </descriptors>
+      <name>Banner Connection</name>
+      <properties>
+        <entry>
+          <key>Database Connection URL</key>
+          <value>jdbc:oracle:thin:@ban8:1521/ban8.creighton.edu</value>
+        </entry>
+        <entry>
+          <key>Database Driver Class Name</key>
+          <value>oracle.jdbc.driver.OracleDriver</value>
+        </entry>
+        <entry>
+          <key>database-driver-locations</key>
+          <value>/apps/ojdbc6.jar</value>
+        </entry>
+        <entry>
+          <key>Database User</key>
+          <value>mycreighton</value>
+        </entry>
+        <entry>
+          <key>Password</key>
+        </entry>
+        <entry>
+          <key>Max Wait Time</key>
+          <value>500 millis</value>
+        </entry>
+        <entry>
+          <key>Max Total Connections</key>
+          <value>8</value>
+        </entry>
+        <entry>
+          <key>Validation-query</key>
+        </entry>
+      </properties>
+      <state>ENABLED</state>
+      <type>org.apache.nifi.dbcp.DBCPConnectionPool</type>
+    </controllerServices>
+    <controllerServices>
+      <id>10a711f3-11d6-116b-0000-000000000000</id>
+      <parentGroupId>10a711bf-11d6-116b-0000-000000000000</parentGroupId>
+      <comments></comments>
+      <descriptors>
+        <entry>
+          <key>Database Connection URL</key>
+          <value>
+            <name>Database Connection URL</name>
+          </value>
+        </entry>
+        <entry>
+          <key>Database Driver Class Name</key>
+          <value>
+            <name>Database Driver Class Name</name>
+          </value>
+        </entry>
+        <entry>
+          <key>database-driver-locations</key>
+          <value>
+            <name>database-driver-locations</name>
+          </value>
+        </entry>
+        <entry>
+          <key>Database User</key>
+          <value>
+            <name>Database User</name>
+          </value>
+        </entry>
+        <entry>
+          <key>Password</key>
+          <value>
+            <name>Password</name>
+          </value>
+        </entry>
+        <entry>
+          <key>Max Wait Time</key>
+          <value>
+            <name>Max Wait Time</name>
+          </value>
+        </entry>
+        <entry>
+          <key>Max Total Connections</key>
+          <value>
+            <name>Max Total Connections</name>
+          </value>
+        </entry>
+        <entry>
+          <key>Validation-query</key>
+          <value>
+            <name>Validation-query</name>
+          </value>
+        </entry>
+      </descriptors>
+      <name>HUB_Connection</name>
+      <properties>
+        <entry>
+          <key>Database Connection URL</key>
+          <value>jdbc:oracle:thin:@oradb1-dev.creighton.edu:1551/DHUB.creighton.edu
+</value>
+        </entry>
+        <entry>
+          <key>Database Driver Class Name</key>
+          <value>oracle.jdbc.driver.OracleDriver</value>
+        </entry>
+        <entry>
+          <key>database-driver-locations</key>
+          <value>/apps/ojdbc6.jar</value>
+        </entry>
+        <entry>
+          <key>Database User</key>
+          <value>yp84670g</value>
+        </entry>
+        <entry>
+          <key>Password</key>
+        </entry>
+        <entry>
+          <key>Max Wait Time</key>
+          <value>500 millis</value>
+        </entry>
+        <entry>
+          <key>Max Total Connections</key>
+          <value>8</value>
+        </entry>
+        <entry>
+          <key>Validation-query</key>
+        </entry>
+      </properties>
+      <state>ENABLED</state>
+      <type>org.apache.nifi.dbcp.DBCPConnectionPool</type>
+    </controllerServices>
+    <processGroups>
+      <id>10a711d0-11d6-116b-0000-000000000000</id>
+      <parentGroupId>10a711bf-11d6-116b-0000-000000000000</parentGroupId>
+      <position>
+        <x>0.0</x>
+        <y>1.0</y>
+      </position>
+      <comments></comments>
+      <contents>
+        <connections>
+          <id>10a711d6-11d6-116b-0000-000000000000</id>
+          <parentGroupId>10a711d0-11d6-116b-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <destination>
+            <groupId>10a711d0-11d6-116b-0000-000000000000</groupId>
+            <id>10a711d2-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>success</selectedRelationships>
+          <source>
+            <groupId>10a711d0-11d6-116b-0000-000000000000</groupId>
+            <id>10a711d4-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <connections>
+          <id>10a711d7-11d6-116b-0000-000000000000</id>
+          <parentGroupId>10a711d0-11d6-116b-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <bends>
+            <x>795.7191319099888</x>
+            <y>493.0168745678555</y>
+          </bends>
+          <bends>
+            <x>795.7191319099888</x>
+            <y>543.0168745678554</y>
+          </bends>
+          <destination>
+            <groupId>10a711d0-11d6-116b-0000-000000000000</groupId>
+            <id>10a711d2-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>failure</selectedRelationships>
+          <source>
+            <groupId>10a711d0-11d6-116b-0000-000000000000</groupId>
+            <id>10a711d2-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <connections>
+          <id>10a711d8-11d6-116b-0000-000000000000</id>
+          <parentGroupId>10a711d0-11d6-116b-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <bends>
+            <x>1518.9003104199824</x>
+            <y>502.06949218475563</y>
+          </bends>
+          <bends>
+            <x>1518.9003104199824</x>
+            <y>552.0694921847556</y>
+          </bends>
+          <destination>
+            <groupId>10a711d0-11d6-116b-0000-000000000000</groupId>
+            <id>10a711d4-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>failure</selectedRelationships>
+          <source>
+            <groupId>10a711d0-11d6-116b-0000-000000000000</groupId>
+            <id>10a711d4-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <connections>
+          <id>10a711d9-11d6-116b-0000-000000000000</id>
+          <parentGroupId>10a711d0-11d6-116b-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <bends>
+            <x>1516.3931736580357</x>
+            <y>268.00003554045077</y>
+          </bends>
+          <bends>
+            <x>1516.3931736580357</x>
+            <y>318.00003554045077</y>
+          </bends>
+          <destination>
+            <groupId>10a711d0-11d6-116b-0000-000000000000</groupId>
+            <id>10a711d5-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>failure</selectedRelationships>
+          <source>
+            <groupId>10a711d0-11d6-116b-0000-000000000000</groupId>
+            <id>10a711d5-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <connections>
+          <id>10a711da-11d6-116b-0000-000000000000</id>
+          <parentGroupId>10a711d0-11d6-116b-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <destination>
+            <groupId>10a711d0-11d6-116b-0000-000000000000</groupId>
+            <id>10a711d5-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>success</selectedRelationships>
+          <source>
+            <groupId>10a711d0-11d6-116b-0000-000000000000</groupId>
+            <id>10a711d3-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <connections>
+          <id>10a711db-11d6-116b-0000-000000000000</id>
+          <parentGroupId>10a711d0-11d6-116b-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <destination>
+            <groupId>10a711d0-11d6-116b-0000-000000000000</groupId>
+            <id>10a711d4-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>split</selectedRelationships>
+          <source>
+            <groupId>10a711d0-11d6-116b-0000-000000000000</groupId>
+            <id>10a711d5-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <connections>
+          <id>10a711dc-11d6-116b-0000-000000000000</id>
+          <parentGroupId>10a711d0-11d6-116b-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <bends>
+            <x>792.0000071971699</x>
+            <y>277.06592447904075</y>
+          </bends>
+          <bends>
+            <x>792.0000071971699</x>
+            <y>327.06592447904075</y>
+          </bends>
+          <destination>
+            <groupId>10a711d0-11d6-116b-0000-000000000000</groupId>
+            <id>10a711d3-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>failure</selectedRelationships>
+          <source>
+            <groupId>10a711d0-11d6-116b-0000-000000000000</groupId>
+            <id>10a711d3-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <processors>
+          <id>10a711d2-11d6-116b-0000-000000000000</id>
+          <parentGroupId>10a711d0-11d6-116b-0000-000000000000</parentGroupId>
+          <position>
+            <x>340.71913190998885</x>
+            <y>453.0168745678555</y>
+          </position>
+          <config>
+            <bulletinLevel>WARN</bulletinLevel>
+            <comments></comments>
+            <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+            <descriptors>
+              <entry>
+                <key>bootstrap.servers</key>
+                <value>
+                  <name>bootstrap.servers</name>
+                </value>
+              </entry>
+              <entry>
+                <key>security.protocol</key>
+                <value>
+                  <name>security.protocol</name>
+                </value>
+              </entry>
+              <entry>
+                <key>sasl.kerberos.service.name</key>
+                <value>
+                  <name>sasl.kerberos.service.name</name>
+                </value>
+              </entry>
+              <entry>
+                <key>ssl.context.service</key>
+                <value>
+                  <identifiesControllerService>org.apache.nifi.ssl.SSLContextService</identifiesControllerService>
+                  <name>ssl.context.service</name>
+                </value>
+              </entry>
+              <entry>
+                <key>topic</key>
+                <value>
+                  <name>topic</name>
+                </value>
+              </entry>
+              <entry>
+                <key>acks</key>
+                <value>
+                  <name>acks</name>
+                </value>
+              </entry>
+              <entry>
+                <key>kafka-key</key>
+                <value>
+                  <name>kafka-key</name>
+                </value>
+              </entry>
+              <entry>
+                <key>key-attribute-encoding</key>
+                <value>
+                  <name>key-attribute-encoding</name>
+                </value>
+              </entry>
+              <entry>
+                <key>message-demarcator</key>
+                <value>
+                  <name>message-demarcator</name>
+                </value>
+              </entry>
+              <entry>
+                <key>max.request.size</key>
+                <value>
+                  <name>max.request.size</name>
+                </value>
+              </entry>
+              <entry>
+                <key>ack.wait.time</key>
+                <value>
+                  <name>ack.wait.time</name>
+                </value>
+              </entry>
+              <entry>
+                <key>max.block.ms</key>
+                <value>
+                  <name>max.block.ms</name>
+                </value>
+              </entry>
+              <entry>
+                <key>partitioner.class</key>
+                <value>
+                  <name>partitioner.class</name>
+                </value>
+              </entry>
+              <entry>
+                <key>compression.type</key>
+                <value>
+                  <name>compression.type</name>
+                </value>
+              </entry>
+            </descriptors>
+            <executionNode>ALL</executionNode>
+            <lossTolerant>false</lossTolerant>
+            <penaltyDuration>30 sec</penaltyDuration>
+            <properties>
+              <entry>
+                <key>bootstrap.servers</key>
+                <value>dlake04:6667,dlake03:6667,dlake05:6667,dlake06:6667,dlake02:6667,dlake01:6667</value>
+              </entry>
+              <entry>
+                <key>security.protocol</key>
+                <value>PLAINTEXT</value>
+              </entry>
+              <entry>
+                <key>sasl.kerberos.service.name</key>
+              </entry>
+              <entry>
+                <key>ssl.context.service</key>
+              </entry>
+              <entry>
+                <key>topic</key>
+                <value>phone_addr_ds</value>
+              </entry>
+              <entry>
+                <key>acks</key>
+                <value>0</value>
+              </entry>
+              <entry>
+                <key>kafka-key</key>
+              </entry>
+              <entry>
+                <key>key-attribute-encoding</key>
+                <value>utf-8</value>
+              </entry>
+              <entry>
+                <key>message-demarcator</key>
+              </entry>
+              <entry>
+                <key>max.request.size</key>
+                <value>1 MB</value>
+              </entry>
+              <entry>
+                <key>ack.wait.time</key>
+                <value>5 secs</value>
+              </entry>
+              <entry>
+                <key>max.block.ms</key>
+                <value>5 sec</value>
+              </entry>
+              <entry>
+                <key>partitioner.class</key>
+                <value>org.apache.nifi.processors.kafka.pubsub.Partitioners$RoundRobinPartitioner</value>
+              </entry>
+              <entry>
+                <key>compression.type</key>
+                <value>none</value>
+              </entry>
+            </properties>
+            <runDurationMillis>0</runDurationMillis>
+            <schedulingPeriod>0 sec</schedulingPeriod>
+            <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+            <yieldDuration>1 sec</yieldDuration>
+          </config>
+          <name>PublishKafka_0_10</name>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>failure</name>
+          </relationships>
+          <relationships>
+            <autoTerminate>true</autoTerminate>
+            <name>success</name>
+          </relationships>
+          <style></style>
+          <type>org.apache.nifi.processors.kafka.pubsub.PublishKafka_0_10</type>
+        </processors>
+        <processors>
+          <id>10a711d3-11d6-116b-0000-000000000000</id>
+          <parentGroupId>10a711d0-11d6-116b-0000-000000000000</parentGroupId>
+          <position>
+            <x>337.0000071971699</x>
+            <y>237.06592447904075</y>
+          </position>
+          <config>
+            <bulletinLevel>WARN</bulletinLevel>
+            <comments></comments>
+            <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+            <descriptors>
+              <entry>
+                <key>Database Connection Pooling Service</key>
+                <value>
+                  <identifiesControllerService>org.apache.nifi.dbcp.DBCPService</identifiesControllerService>
+                  <name>Database Connection Pooling Service</name>
+                </value>
+              </entry>
+              <entry>
+                <key>SQL select query</key>
+                <value>
+                  <name>SQL select query</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Max Wait Time</key>
+                <value>
+                  <name>Max Wait Time</name>
+                </value>
+              </entry>
+              <entry>
+                <key>dbf-normalize</key>
+                <value>
+                  <name>dbf-normalize</name>
+                </value>
+              </entry>
+            </descriptors>
+            <executionNode>ALL</executionNode>
+            <lossTolerant>false</lossTolerant>
+            <penaltyDuration>30 sec</penaltyDuration>
+            <properties>
+              <entry>
+                <key>Database Connection Pooling Service</key>
+                <value>10a711cc-11d6-116b-0000-000000000000</value>
+              </entry>
+              <entry>
+                <key>SQL select query</key>
+                <value>select 
+'BAN' as "src_sys",
+spriden_id "netid",
+spriden_pidm as "src_uid",
+tele.sprtele_phone_area || '-' ||tele.SPRTELE_PHONE_NUMBER "telephone_num",
+tele.SPRTELE_TELE_CODE "telephone_type",
+st.STVTELE_DESC "type_desc",
+to_char(systimestamp,'DD-MON-YYYY HH24:MI:SS') "src_ts"
+from 
+spriden iden,
+sprtele tele,
+STVTELE st
+where 
+iden.spriden_pidm = tele.sprtele_pidm
+and tele.SPRTELE_TELE_CODE=st.STVTELE_CODE
+and spriden_id='JPE37811'</value>
+              </entry>
+              <entry>
+                <key>Max Wait Time</key>
+                <value>0 seconds</value>
+              </entry>
+              <entry>
+                <key>dbf-normalize</key>
+                <value>false</value>
+              </entry>
+            </properties>
+            <runDurationMillis>0</runDurationMillis>
+            <schedulingPeriod>2 min</schedulingPeriod>
+            <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+            <yieldDuration>1 sec</yieldDuration>
+          </config>
+          <name>ExecuteSQL</name>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>failure</name>
+          </relationships>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>success</name>
+          </relationships>
+          <style></style>
+          <type>org.apache.nifi.processors.standard.ExecuteSQL</type>
+        </processors>
+        <processors>
+          <id>10a711d4-11d6-116b-0000-000000000000</id>
+          <parentGroupId>10a711d0-11d6-116b-0000-000000000000</parentGroupId>
+          <position>
+            <x>1063.9003104199824</x>
+            <y>462.06949218475563</y>
+          </position>
+          <config>
+            <bulletinLevel>WARN</bulletinLevel>
+            <comments></comments>
+            <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+            <descriptors>
+              <entry>
+                <key>JSON container options</key>
+                <value>
+                  <name>JSON container options</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Wrap Single Record</key>
+                <value>
+                  <name>Wrap Single Record</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Avro schema</key>
+                <value>
+                  <name>Avro schema</name>
+                </value>
+              </entry>
+            </descriptors>
+            <executionNode>ALL</executionNode>
+            <lossTolerant>false</lossTolerant>
+            <penaltyDuration>30 sec</penaltyDuration>
+            <properties>
+              <entry>
+                <key>JSON container options</key>
+                <value>none</value>
+              </entry>
+              <entry>
+                <key>Wrap Single Record</key>
+                <value>false</value>
+              </entry>
+              <entry>
+                <key>Avro schema</key>
+              </entry>
+            </properties>
+            <runDurationMillis>0</runDurationMillis>
+            <schedulingPeriod>0 sec</schedulingPeriod>
+            <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+            <yieldDuration>1 sec</yieldDuration>
+          </config>
+          <name>ConvertAvroToJSON</name>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>failure</name>
+          </relationships>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>success</name>
+          </relationships>
+          <style></style>
+          <type>org.apache.nifi.processors.avro.ConvertAvroToJSON</type>
+        </processors>
+        <processors>
+          <id>10a711d5-11d6-116b-0000-000000000000</id>
+          <parentGroupId>10a711d0-11d6-116b-0000-000000000000</parentGroupId>
+          <position>
+            <x>1061.3931736580357</x>
+            <y>228.00003554045077</y>
+          </position>
+          <config>
+            <bulletinLevel>WARN</bulletinLevel>
+            <comments></comments>
+            <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+            <descriptors>
+              <entry>
+                <key>Split Strategy</key>
+                <value>
+                  <name>Split Strategy</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Output Size</key>
+                <value>
+                  <name>Output Size</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Output Strategy</key>
+                <value>
+                  <name>Output Strategy</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Transfer Metadata</key>
+                <value>
+                  <name>Transfer Metadata</name>
+                </value>
+              </entry>
+            </descriptors>
+            <executionNode>ALL</executionNode>
+            <lossTolerant>false</lossTolerant>
+            <penaltyDuration>30 sec</penaltyDuration>
+            <properties>
+              <entry>
+                <key>Split Strategy</key>
+                <value>Record</value>
+              </entry>
+              <entry>
+                <key>Output Size</key>
+                <value>1</value>
+              </entry>
+              <entry>
+                <key>Output Strategy</key>
+                <value>Datafile</value>
+              </entry>
+              <entry>
+                <key>Transfer Metadata</key>
+                <value>true</value>
+              </entry>
+            </properties>
+            <runDurationMillis>0</runDurationMillis>
+            <schedulingPeriod>0 sec</schedulingPeriod>
+            <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+            <yieldDuration>1 sec</yieldDuration>
+          </config>
+          <name>SplitAvro</name>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>failure</name>
+          </relationships>
+          <relationships>
+            <autoTerminate>true</autoTerminate>
+            <name>original</name>
+          </relationships>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>split</name>
+          </relationships>
+          <style></style>
+          <type>org.apache.nifi.processors.avro.SplitAvro</type>
+        </processors>
+      </contents>
+      <name>banner_source</name>
+    </processGroups>
+    <processGroups>
+      <id>10a711dd-11d6-116b-0000-000000000000</id>
+      <parentGroupId>10a711bf-11d6-116b-0000-000000000000</parentGroupId>
+      <position>
+        <x>491.0</x>
+        <y>0.0</y>
+      </position>
+      <comments></comments>
+      <contents>
+        <connections>
+          <id>10a711ea-11d6-116b-0000-000000000000</id>
+          <parentGroupId>10a711dd-11d6-116b-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <destination>
+            <groupId>10a711dd-11d6-116b-0000-000000000000</groupId>
+            <id>10a711e6-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>success</selectedRelationships>
+          <source>
+            <groupId>10a711dd-11d6-116b-0000-000000000000</groupId>
+            <id>10a711e8-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <connections>
+          <id>10a711eb-11d6-116b-0000-000000000000</id>
+          <parentGroupId>10a711dd-11d6-116b-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <bends>
+            <x>1410.7191242805943</x>
+            <y>716.0168364208828</y>
+          </bends>
+          <bends>
+            <x>1410.7191242805943</x>
+            <y>766.0168364208828</y>
+          </bends>
+          <destination>
+            <groupId>10a711dd-11d6-116b-0000-000000000000</groupId>
+            <id>10a711e6-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>failure</selectedRelationships>
+          <source>
+            <groupId>10a711dd-11d6-116b-0000-000000000000</groupId>
+            <id>10a711e6-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <connections>
+          <id>10a711ec-11d6-116b-0000-000000000000</id>
+          <parentGroupId>10a711dd-11d6-116b-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <bends>
+            <x>2078.900302790588</x>
+            <y>712.069454037783</y>
+          </bends>
+          <bends>
+            <x>2078.900302790588</x>
+            <y>762.069454037783</y>
+          </bends>
+          <destination>
+            <groupId>10a711dd-11d6-116b-0000-000000000000</groupId>
+            <id>10a711e8-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>failure</selectedRelationships>
+          <source>
+            <groupId>10a711dd-11d6-116b-0000-000000000000</groupId>
+            <id>10a711e8-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <connections>
+          <id>10a711ed-11d6-116b-0000-000000000000</id>
+          <parentGroupId>10a711dd-11d6-116b-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <bends>
+            <x>2101.393166028641</x>
+            <y>483.9999973934781</y>
+          </bends>
+          <bends>
+            <x>2101.393166028641</x>
+            <y>533.9999973934781</y>
+          </bends>
+          <destination>
+            <groupId>10a711dd-11d6-116b-0000-000000000000</groupId>
+            <id>10a711e9-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>failure</selectedRelationships>
+          <source>
+            <groupId>10a711dd-11d6-116b-0000-000000000000</groupId>
+            <id>10a711e9-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <connections>
+          <id>10a711ee-11d6-116b-0000-000000000000</id>
+          <parentGroupId>10a711dd-11d6-116b-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <destination>
+            <groupId>10a711dd-11d6-116b-0000-000000000000</groupId>
+            <id>10a711e9-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>success</selectedRelationships>
+          <source>
+            <groupId>10a711dd-11d6-116b-0000-000000000000</groupId>
+            <id>10a711e7-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <connections>
+          <id>10a711ef-11d6-116b-0000-000000000000</id>
+          <parentGroupId>10a711dd-11d6-116b-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <destination>
+            <groupId>10a711dd-11d6-116b-0000-000000000000</groupId>
+            <id>10a711e8-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>split</selectedRelationships>
+          <source>
+            <groupId>10a711dd-11d6-116b-0000-000000000000</groupId>
+            <id>10a711e9-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <connections>
+          <id>10a711f0-11d6-116b-0000-000000000000</id>
+          <parentGroupId>10a711dd-11d6-116b-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <bends>
+            <x>1376.9999995677754</x>
+            <y>493.0658863320681</y>
+          </bends>
+          <bends>
+            <x>1376.9999995677754</x>
+            <y>543.0658863320681</y>
+          </bends>
+          <destination>
+            <groupId>10a711dd-11d6-116b-0000-000000000000</groupId>
+            <id>10a711e7-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>failure</selectedRelationships>
+          <source>
+            <groupId>10a711dd-11d6-116b-0000-000000000000</groupId>
+            <id>10a711e7-11d6-116b-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <processors>
+          <id>10a711e6-11d6-116b-0000-000000000000</id>
+          <parentGroupId>10a711dd-11d6-116b-0000-000000000000</parentGroupId>
+          <position>
+            <x>955.7191242805943</x>
+            <y>676.0168364208828</y>
+          </position>
+          <config>
+            <bulletinLevel>WARN</bulletinLevel>
+            <comments></comments>
+            <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+            <descriptors>
+              <entry>
+                <key>bootstrap.servers</key>
+                <value>
+                  <name>bootstrap.servers</name>
+                </value>
+              </entry>
+              <entry>
+                <key>security.protocol</key>
+                <value>
+                  <name>security.protocol</name>
+                </value>
+              </entry>
+              <entry>
+                <key>sasl.kerberos.service.name</key>
+                <value>
+                  <name>sasl.kerberos.service.name</name>
+                </value>
+              </entry>
+              <entry>
+                <key>ssl.context.service</key>
+                <value>
+                  <identifiesControllerService>org.apache.nifi.ssl.SSLContextService</identifiesControllerService>
+                  <name>ssl.context.service</name>
+                </value>
+              </entry>
+              <entry>
+                <key>topic</key>
+                <value>
+                  <name>topic</name>
+                </value>
+              </entry>
+              <entry>
+                <key>acks</key>
+                <value>
+                  <name>acks</name>
+                </value>
+              </entry>
+              <entry>
+                <key>kafka-key</key>
+                <value>
+                  <name>kafka-key</name>
+                </value>
+              </entry>
+              <entry>
+                <key>key-attribute-encoding</key>
+                <value>
+                  <name>key-attribute-encoding</name>
+                </value>
+              </entry>
+              <entry>
+                <key>message-demarcator</key>
+                <value>
+                  <name>message-demarcator</name>
+                </value>
+              </entry>
+              <entry>
+                <key>max.request.size</key>
+                <value>
+                  <name>max.request.size</name>
+                </value>
+              </entry>
+              <entry>
+                <key>ack.wait.time</key>
+                <value>
+                  <name>ack.wait.time</name>
+                </value>
+              </entry>
+              <entry>
+                <key>max.block.ms</key>
+                <value>
+                  <name>max.block.ms</name>
+                </value>
+              </entry>
+              <entry>
+                <key>partitioner.class</key>
+                <value>
+                  <name>partitioner.class</name>
+                </value>
+              </entry>
+              <entry>
+                <key>compression.type</key>
+                <value>
+                  <name>compression.type</name>
+                </value>
+              </entry>
+            </descriptors>
+            <executionNode>ALL</executionNode>
+            <lossTolerant>false</lossTolerant>
+            <penaltyDuration>30 sec</penaltyDuration>
+            <properties>
+              <entry>
+                <key>bootstrap.servers</key>
+                <value>dlake04:6667,dlake03:6667,dlake05:6667,dlake06:6667,dlake02:6667,dlake01:6667</value>
+              </entry>
+              <entry>
+                <key>security.protocol</key>
+                <value>PLAINTEXT</value>
+              </entry>
+              <entry>
+                <key>sasl.kerberos.service.name</key>
+              </entry>
+              <entry>
+                <key>ssl.context.service</key>
+              </entry>
+              <entry>
+                <key>topic</key>
+                <value>phone_addr_ds</value>
+              </entry>
+              <entry>
+                <key>acks</key>
+                <value>0</value>
+              </entry>
+              <entry>
+                <key>kafka-key</key>
+              </entry>
+              <entry>
+                <key>key-attribute-encoding</key>
+                <value>utf-8</value>
+              </entry>
+              <entry>
+                <key>message-demarcator</key>
+              </entry>
+              <entry>
+                <key>max.request.size</key>
+                <value>1 MB</value>
+              </entry>
+              <entry>
+                <key>ack.wait.time</key>
+                <value>5 secs</value>
+              </entry>
+              <entry>
+                <key>max.block.ms</key>
+                <value>5 sec</value>
+              </entry>
+              <entry>
+                <key>partitioner.class</key>
+                <value>org.apache.nifi.processors.kafka.pubsub.Partitioners$RoundRobinPartitioner</value>
+              </entry>
+              <entry>
+                <key>compression.type</key>
+                <value>none</value>
+              </entry>
+            </properties>
+            <runDurationMillis>0</runDurationMillis>
+            <schedulingPeriod>0 sec</schedulingPeriod>
+            <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+            <yieldDuration>1 sec</yieldDuration>
+          </config>
+          <name>PublishKafka_0_10</name>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>failure</name>
+          </relationships>
+          <relationships>
+            <autoTerminate>true</autoTerminate>
+            <name>success</name>
+          </relationships>
+          <style></style>
+          <type>org.apache.nifi.processors.kafka.pubsub.PublishKafka_0_10</type>
+        </processors>
+        <processors>
+          <id>10a711e7-11d6-116b-0000-000000000000</id>
+          <parentGroupId>10a711dd-11d6-116b-0000-000000000000</parentGroupId>
+          <position>
+            <x>921.9999995677754</x>
+            <y>453.0658863320681</y>
+          </position>
+          <config>
+            <bulletinLevel>WARN</bulletinLevel>
+            <comments></comments>
+            <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+            <descriptors>
+              <entry>
+                <key>Database Connection Pooling Service</key>
+                <value>
+                  <identifiesControllerService>org.apache.nifi.dbcp.DBCPService</identifiesControllerService>
+                  <name>Database Connection Pooling Service</name>
+                </value>
+              </entry>
+              <entry>
+                <key>SQL select query</key>
+                <value>
+                  <name>SQL select query</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Max Wait Time</key>
+                <value>
+                  <name>Max Wait Time</name>
+                </value>
+              </entry>
+              <entry>
+                <key>dbf-normalize</key>
+                <value>
+                  <name>dbf-normalize</name>
+                </value>
+              </entry>
+            </descriptors>
+            <executionNode>ALL</executionNode>
+            <lossTolerant>false</lossTolerant>
+            <penaltyDuration>30 sec</penaltyDuration>
+            <properties>
+              <entry>
+                <key>Database Connection Pooling Service</key>
+                <value>10a711f3-11d6-116b-0000-000000000000</value>
+              </entry>
+              <entry>
+                <key>SQL select query</key>
+                <value>select 
+'HUB' as "src_sys",
+pk.NETID "netid",
+pk.PERSON_KEY_VALUE as "src_uid",
+p.NATIONAL_DESTINATION_CODE || '-' || p.SUBSCRIBER_NUMBER "telephone_num",
+nvl(ptk.EBS_HR_PHONE_TYPE,ptk.BANNER_PHONE_TYPE) "telephone_type",
+ptk.PHONE_TYPE_DESC "type_desc",
+to_char(systimestamp,'DD-MON-YYYY HH24:MI:SS') "src_ts"
+from 
+hub.person_key pk,
+hub.person_phone pp,
+hub.phone p,
+HUB.PHONE_TYPE_KEY ptk
+where
+pk.PERSON_KEY_VALUE = pp.PERSON_KEY_VALUE
+and pp.PHONE_KEY_VALUE = p.PHONE_KEY_VALUE
+and pp.PHONE_TYPE_KEY_VALUE = ptk.PHONE_TYPE_KEY_VALUE
+and pk.netid='JPE37811'</value>
+              </entry>
+              <entry>
+                <key>Max Wait Time</key>
+                <value>0 seconds</value>
+              </entry>
+              <entry>
+                <key>dbf-normalize</key>
+                <value>false</value>
+              </entry>
+            </properties>
+            <runDurationMillis>0</runDurationMillis>
+            <schedulingPeriod>30 sec</schedulingPeriod>
+            <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+            <yieldDuration>1 sec</yieldDuration>
+          </config>
+          <name>ExecuteSQL</name>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>failure</name>
+          </relationships>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>success</name>
+          </relationships>
+          <style></style>
+          <type>org.apache.nifi.processors.standard.ExecuteSQL</type>
+        </processors>
+        <processors>
+          <id>10a711e8-11d6-116b-0000-000000000000</id>
+          <parentGroupId>10a711dd-11d6-116b-0000-000000000000</parentGroupId>
+          <position>
+            <x>1623.9003027905878</x>
+            <y>672.069454037783</y>
+          </position>
+          <config>
+            <bulletinLevel>WARN</bulletinLevel>
+            <comments></comments>
+            <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+            <descriptors>
+              <entry>
+                <key>JSON container options</key>
+                <value>
+                  <name>JSON container options</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Wrap Single Record</key>
+                <value>
+                  <name>Wrap Single Record</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Avro schema</key>
+                <value>
+                  <name>Avro schema</name>
+                </value>
+              </entry>
+            </descriptors>
+            <executionNode>ALL</executionNode>
+            <lossTolerant>false</lossTolerant>
+            <penaltyDuration>30 sec</penaltyDuration>
+            <properties>
+              <entry>
+                <key>JSON container options</key>
+                <value>none</value>
+              </entry>
+              <entry>
+                <key>Wrap Single Record</key>
+                <value>false</value>
+              </entry>
+              <entry>
+                <key>Avro schema</key>
+              </entry>
+            </properties>
+            <runDurationMillis>0</runDurationMillis>
+            <schedulingPeriod>0 sec</schedulingPeriod>
+            <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+            <yieldDuration>1 sec</yieldDuration>
+          </config>
+          <name>ConvertAvroToJSON</name>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>failure</name>
+          </relationships>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>success</name>
+          </relationships>
+          <style></style>
+          <type>org.apache.nifi.processors.avro.ConvertAvroToJSON</type>
+        </processors>
+        <processors>
+          <id>10a711e9-11d6-116b-0000-000000000000</id>
+          <parentGroupId>10a711dd-11d6-116b-0000-000000000000</parentGroupId>
+          <position>
+            <x>1646.3931660286412</x>
+            <y>443.9999973934781</y>
+          </position>
+          <config>
+            <bulletinLevel>WARN</bulletinLevel>
+            <comments></comments>
+            <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+            <descriptors>
+              <entry>
+                <key>Split Strategy</key>
+                <value>
+                  <name>Split Strategy</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Output Size</key>
+                <value>
+                  <name>Output Size</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Output Strategy</key>
+                <value>
+                  <name>Output Strategy</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Transfer Metadata</key>
+                <value>
+                  <name>Transfer Metadata</name>
+                </value>
+              </entry>
+            </descriptors>
+            <executionNode>ALL</executionNode>
+            <lossTolerant>false</lossTolerant>
+            <penaltyDuration>30 sec</penaltyDuration>
+            <properties>
+              <entry>
+                <key>Split Strategy</key>
+                <value>Record</value>
+              </entry>
+              <entry>
+                <key>Output Size</key>
+                <value>1</value>
+              </entry>
+              <entry>
+                <key>Output Strategy</key>
+                <value>Datafile</value>
+              </entry>
+              <entry>
+                <key>Transfer Metadata</key>
+                <value>true</value>
+              </entry>
+            </properties>
+            <runDurationMillis>0</runDurationMillis>
+            <schedulingPeriod>0 sec</schedulingPeriod>
+            <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+            <yieldDuration>1 sec</yieldDuration>
+          </config>
+          <name>SplitAvro</name>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>failure</name>
+          </relationships>
+          <relationships>
+            <autoTerminate>true</autoTerminate>
+            <name>original</name>
+          </relationships>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>split</name>
+          </relationships>
+          <style></style>
+          <type>org.apache.nifi.processors.avro.SplitAvro</type>
+        </processors>
+      </contents>
+      <name>hub_source</name>
+    </processGroups>
+    <processGroups>
+      <id>72b914cf-015e-1000-0000-000000000000</id>
+      <parentGroupId>10a711bf-11d6-116b-0000-000000000000</parentGroupId>
+      <position>
+        <x>108.00001073297335</x>
+        <y>258.00000194348263</y>
+      </position>
+      <comments></comments>
+      <contents>
+        <connections>
+          <id>11d6116c-11e9-10a7-0000-000000000000</id>
+          <parentGroupId>72b914cf-015e-1000-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <destination>
+            <groupId>72b914cf-015e-1000-0000-000000000000</groupId>
+            <id>11d6116b-11e9-10a7-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>success</selectedRelationships>
+          <source>
+            <groupId>72b914cf-015e-1000-0000-000000000000</groupId>
+            <id>11d6116e-11d2-10a7-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <connections>
+          <id>11d6116d-11e9-10a7-0000-000000000000</id>
+          <parentGroupId>72b914cf-015e-1000-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <destination>
+            <groupId>72b914cf-015e-1000-0000-000000000000</groupId>
+            <id>11d6116b-11e8-10a7-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>split</selectedRelationships>
+          <source>
+            <groupId>72b914cf-015e-1000-0000-000000000000</groupId>
+            <id>11d6116b-11e9-10a7-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <connections>
+          <id>11d6116e-11e9-10a7-0000-000000000000</id>
+          <parentGroupId>72b914cf-015e-1000-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <destination>
+            <groupId>72b914cf-015e-1000-0000-000000000000</groupId>
+            <id>11d6116b-11d2-10a7-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>success</selectedRelationships>
+          <source>
+            <groupId>72b914cf-015e-1000-0000-000000000000</groupId>
+            <id>11d6116b-11e8-10a7-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <connections>
+          <id>11d6116f-11e9-10a7-0000-000000000000</id>
+          <parentGroupId>72b914cf-015e-1000-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <bends>
+            <x>1199.0000007640056</x>
+            <y>357.0694559812656</y>
+          </bends>
+          <bends>
+            <x>1199.0000007640056</x>
+            <y>407.0694559812656</y>
+          </bends>
+          <destination>
+            <groupId>72b914cf-015e-1000-0000-000000000000</groupId>
+            <id>11d6116b-11e8-10a7-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>failure</selectedRelationships>
+          <source>
+            <groupId>72b914cf-015e-1000-0000-000000000000</groupId>
+            <id>11d6116b-11e8-10a7-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <connections>
+          <id>11d61170-11d2-10a7-0000-000000000000</id>
+          <parentGroupId>72b914cf-015e-1000-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <bends>
+            <x>430.00000076400556</x>
+            <y>93.99999933696074</y>
+          </bends>
+          <bends>
+            <x>430.00000076400556</x>
+            <y>143.99999933696074</y>
+          </bends>
+          <destination>
+            <groupId>72b914cf-015e-1000-0000-000000000000</groupId>
+            <id>11d6116e-11d2-10a7-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>failure</selectedRelationships>
+          <source>
+            <groupId>72b914cf-015e-1000-0000-000000000000</groupId>
+            <id>11d6116e-11d2-10a7-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <connections>
+          <id>11d61170-11e9-10a7-0000-000000000000</id>
+          <parentGroupId>72b914cf-015e-1000-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <bends>
+            <x>1214.492864002059</x>
+            <y>74.99999933696074</y>
+          </bends>
+          <bends>
+            <x>1214.492864002059</x>
+            <y>124.99999933696074</y>
+          </bends>
+          <destination>
+            <groupId>72b914cf-015e-1000-0000-000000000000</groupId>
+            <id>11d6116b-11e9-10a7-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>failure</selectedRelationships>
+          <source>
+            <groupId>72b914cf-015e-1000-0000-000000000000</groupId>
+            <id>11d6116b-11e9-10a7-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <processors>
+          <id>11d6116b-11d2-10a7-0000-000000000000</id>
+          <parentGroupId>72b914cf-015e-1000-0000-000000000000</parentGroupId>
+          <position>
+            <x>-12.999999235994437</x>
+            <y>299.99999933696074</y>
+          </position>
+          <config>
+            <bulletinLevel>WARN</bulletinLevel>
+            <comments></comments>
+            <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+            <descriptors>
+              <entry>
+                <key>bootstrap.servers</key>
+                <value>
+                  <name>bootstrap.servers</name>
+                </value>
+              </entry>
+              <entry>
+                <key>security.protocol</key>
+                <value>
+                  <name>security.protocol</name>
+                </value>
+              </entry>
+              <entry>
+                <key>sasl.kerberos.service.name</key>
+                <value>
+                  <name>sasl.kerberos.service.name</name>
+                </value>
+              </entry>
+              <entry>
+                <key>ssl.context.service</key>
+                <value>
+                  <identifiesControllerService>org.apache.nifi.ssl.SSLContextService</identifiesControllerService>
+                  <name>ssl.context.service</name>
+                </value>
+              </entry>
+              <entry>
+                <key>topic</key>
+                <value>
+                  <name>topic</name>
+                </value>
+              </entry>
+              <entry>
+                <key>acks</key>
+                <value>
+                  <name>acks</name>
+                </value>
+              </entry>
+              <entry>
+                <key>kafka-key</key>
+                <value>
+                  <name>kafka-key</name>
+                </value>
+              </entry>
+              <entry>
+                <key>key-attribute-encoding</key>
+                <value>
+                  <name>key-attribute-encoding</name>
+                </value>
+              </entry>
+              <entry>
+                <key>message-demarcator</key>
+                <value>
+                  <name>message-demarcator</name>
+                </value>
+              </entry>
+              <entry>
+                <key>max.request.size</key>
+                <value>
+                  <name>max.request.size</name>
+                </value>
+              </entry>
+              <entry>
+                <key>ack.wait.time</key>
+                <value>
+                  <name>ack.wait.time</name>
+                </value>
+              </entry>
+              <entry>
+                <key>max.block.ms</key>
+                <value>
+                  <name>max.block.ms</name>
+                </value>
+              </entry>
+              <entry>
+                <key>partitioner.class</key>
+                <value>
+                  <name>partitioner.class</name>
+                </value>
+              </entry>
+              <entry>
+                <key>compression.type</key>
+                <value>
+                  <name>compression.type</name>
+                </value>
+              </entry>
+            </descriptors>
+            <executionNode>ALL</executionNode>
+            <lossTolerant>false</lossTolerant>
+            <penaltyDuration>30 sec</penaltyDuration>
+            <properties>
+              <entry>
+                <key>bootstrap.servers</key>
+                <value>dlake04:6667,dlake03:6667,dlake05:6667,dlake06:6667,dlake02:6667,dlake01:6667</value>
+              </entry>
+              <entry>
+                <key>security.protocol</key>
+                <value>PLAINTEXT</value>
+              </entry>
+              <entry>
+                <key>sasl.kerberos.service.name</key>
+              </entry>
+              <entry>
+                <key>ssl.context.service</key>
+              </entry>
+              <entry>
+                <key>topic</key>
+                <value>phone_addr_ds</value>
+              </entry>
+              <entry>
+                <key>acks</key>
+                <value>0</value>
+              </entry>
+              <entry>
+                <key>kafka-key</key>
+              </entry>
+              <entry>
+                <key>key-attribute-encoding</key>
+                <value>utf-8</value>
+              </entry>
+              <entry>
+                <key>message-demarcator</key>
+              </entry>
+              <entry>
+                <key>max.request.size</key>
+                <value>1 MB</value>
+              </entry>
+              <entry>
+                <key>ack.wait.time</key>
+                <value>5 secs</value>
+              </entry>
+              <entry>
+                <key>max.block.ms</key>
+                <value>5 sec</value>
+              </entry>
+              <entry>
+                <key>partitioner.class</key>
+                <value>org.apache.nifi.processors.kafka.pubsub.Partitioners$RoundRobinPartitioner</value>
+              </entry>
+              <entry>
+                <key>compression.type</key>
+                <value>none</value>
+              </entry>
+            </properties>
+            <runDurationMillis>0</runDurationMillis>
+            <schedulingPeriod>0 sec</schedulingPeriod>
+            <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+            <yieldDuration>1 sec</yieldDuration>
+          </config>
+          <name>PublishKafka_0_10</name>
+          <relationships>
+            <autoTerminate>true</autoTerminate>
+            <name>failure</name>
+          </relationships>
+          <relationships>
+            <autoTerminate>true</autoTerminate>
+            <name>success</name>
+          </relationships>
+          <style></style>
+          <type>org.apache.nifi.processors.kafka.pubsub.PublishKafka_0_10</type>
+        </processors>
+        <processors>
+          <id>11d6116b-11e8-10a7-0000-000000000000</id>
+          <parentGroupId>72b914cf-015e-1000-0000-000000000000</parentGroupId>
+          <position>
+            <x>744.0000007640056</x>
+            <y>317.0694559812656</y>
+          </position>
+          <config>
+            <bulletinLevel>WARN</bulletinLevel>
+            <comments></comments>
+            <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+            <descriptors>
+              <entry>
+                <key>JSON container options</key>
+                <value>
+                  <name>JSON container options</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Wrap Single Record</key>
+                <value>
+                  <name>Wrap Single Record</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Avro schema</key>
+                <value>
+                  <name>Avro schema</name>
+                </value>
+              </entry>
+            </descriptors>
+            <executionNode>ALL</executionNode>
+            <lossTolerant>false</lossTolerant>
+            <penaltyDuration>30 sec</penaltyDuration>
+            <properties>
+              <entry>
+                <key>JSON container options</key>
+                <value>none</value>
+              </entry>
+              <entry>
+                <key>Wrap Single Record</key>
+                <value>false</value>
+              </entry>
+              <entry>
+                <key>Avro schema</key>
+              </entry>
+            </properties>
+            <runDurationMillis>0</runDurationMillis>
+            <schedulingPeriod>0 sec</schedulingPeriod>
+            <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+            <yieldDuration>1 sec</yieldDuration>
+          </config>
+          <name>ConvertAvroToJSON</name>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>failure</name>
+          </relationships>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>success</name>
+          </relationships>
+          <style></style>
+          <type>org.apache.nifi.processors.avro.ConvertAvroToJSON</type>
+        </processors>
+        <processors>
+          <id>11d6116b-11e9-10a7-0000-000000000000</id>
+          <parentGroupId>72b914cf-015e-1000-0000-000000000000</parentGroupId>
+          <position>
+            <x>759.4928640020589</x>
+            <y>34.99999933696074</y>
+          </position>
+          <config>
+            <bulletinLevel>WARN</bulletinLevel>
+            <comments></comments>
+            <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+            <descriptors>
+              <entry>
+                <key>Split Strategy</key>
+                <value>
+                  <name>Split Strategy</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Output Size</key>
+                <value>
+                  <name>Output Size</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Output Strategy</key>
+                <value>
+                  <name>Output Strategy</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Transfer Metadata</key>
+                <value>
+                  <name>Transfer Metadata</name>
+                </value>
+              </entry>
+            </descriptors>
+            <executionNode>ALL</executionNode>
+            <lossTolerant>false</lossTolerant>
+            <penaltyDuration>30 sec</penaltyDuration>
+            <properties>
+              <entry>
+                <key>Split Strategy</key>
+                <value>Record</value>
+              </entry>
+              <entry>
+                <key>Output Size</key>
+                <value>1</value>
+              </entry>
+              <entry>
+                <key>Output Strategy</key>
+                <value>Datafile</value>
+              </entry>
+              <entry>
+                <key>Transfer Metadata</key>
+                <value>true</value>
+              </entry>
+            </properties>
+            <runDurationMillis>0</runDurationMillis>
+            <schedulingPeriod>0 sec</schedulingPeriod>
+            <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+            <yieldDuration>1 sec</yieldDuration>
+          </config>
+          <name>SplitAvro</name>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>failure</name>
+          </relationships>
+          <relationships>
+            <autoTerminate>true</autoTerminate>
+            <name>original</name>
+          </relationships>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>split</name>
+          </relationships>
+          <style></style>
+          <type>org.apache.nifi.processors.avro.SplitAvro</type>
+        </processors>
+        <processors>
+          <id>11d6116e-11d2-10a7-0000-000000000000</id>
+          <parentGroupId>72b914cf-015e-1000-0000-000000000000</parentGroupId>
+          <position>
+            <x>-24.999999235994437</x>
+            <y>53.99999933696074</y>
+          </position>
+          <config>
+            <bulletinLevel>WARN</bulletinLevel>
+            <comments></comments>
+            <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+            <descriptors>
+              <entry>
+                <key>Database Connection Pooling Service</key>
+                <value>
+                  <identifiesControllerService>org.apache.nifi.dbcp.DBCPService</identifiesControllerService>
+                  <name>Database Connection Pooling Service</name>
+                </value>
+              </entry>
+              <entry>
+                <key>SQL select query</key>
+                <value>
+                  <name>SQL select query</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Max Wait Time</key>
+                <value>
+                  <name>Max Wait Time</name>
+                </value>
+              </entry>
+              <entry>
+                <key>dbf-normalize</key>
+                <value>
+                  <name>dbf-normalize</name>
+                </value>
+              </entry>
+            </descriptors>
+            <executionNode>ALL</executionNode>
+            <lossTolerant>false</lossTolerant>
+            <penaltyDuration>30 sec</penaltyDuration>
+            <properties>
+              <entry>
+                <key>Database Connection Pooling Service</key>
+                <value>10a711cc-11d6-116b-0000-000000000000</value>
+              </entry>
+              <entry>
+                <key>SQL select query</key>
+                <value>select 
+'MYC' as "src_sys",
+'JPE37811' as "netid",
+'3435696' as "src_uid",
+'310-5790537' as "telephone_num",
+'PR' as "telephone_type",
+'Permanent' as "type_desc",
+to_char(systimestamp,'DD-MON-YYYY HH24:MI:SS') "src_ts"
+from 
+dual</value>
+              </entry>
+              <entry>
+                <key>Max Wait Time</key>
+                <value>0 seconds</value>
+              </entry>
+              <entry>
+                <key>dbf-normalize</key>
+                <value>false</value>
+              </entry>
+            </properties>
+            <runDurationMillis>0</runDurationMillis>
+            <schedulingPeriod>30 sec</schedulingPeriod>
+            <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+            <yieldDuration>1 sec</yieldDuration>
+          </config>
+          <name>ExecuteSQL</name>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>failure</name>
+          </relationships>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>success</name>
+          </relationships>
+          <style></style>
+          <type>org.apache.nifi.processors.standard.ExecuteSQL</type>
+        </processors>
+      </contents>
+      <name>myc</name>
+    </processGroups>
+  </snippet>
+  <timestamp>09/11/2017 16:08:11 CDT</timestamp>
+</template>
